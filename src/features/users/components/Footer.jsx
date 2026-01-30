@@ -6,9 +6,9 @@ const Footer = () => {
 
     {/* ABOUT / BRAND */}
     <div>
-      <h2 className="text-xl font-bold mb-4">Ayub Retail</h2>
+      <h2 className="text-xl font-bold mb-4">TriCore It Solution</h2>
       <p className="text-gray-400 text-sm">
-        Leading provider of construction materials in Ethiopia. We focus on quality, reliability, and excellent customer service.
+         TriCore IT Solution is dedicated to delivering cutting-edge digital solutions, including digital menu systems, website development, and comprehensive system management. Our mission is to empower businesses with modern, reliable, and innovative tools that drive growth and efficiency. 
       </p>
     </div>
 
@@ -17,9 +17,10 @@ const Footer = () => {
       <h2 className="text-xl font-bold mb-4">Quick Links</h2>
       <ul className="space-y-2 text-gray-400 text-sm">
         <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
-        <li><a href="/about" className="hover:text-blue-500 transition">About Us</a></li>
-        <li><a href="/services" className="hover:text-blue-500 transition">Services</a></li>
-        <li><a href="/contact" className="hover:text-blue-500 transition">Contact</a></li>
+        <li><a href="/about_us" className="hover:text-blue-500 transition">About Us</a></li>
+        <li><a href="/ourservice" className="hover:text-blue-500 transition">Our Services</a></li>
+         <li><a href="/company" className="hover:text-blue-500 transition">Company</a></li>
+        <li><a href="/contact_us" className="hover:text-blue-500 transition">Contact</a></li>
       </ul>
     </div>
 
@@ -63,7 +64,7 @@ const Footer = () => {
 
   {/* COPYRIGHT */}
   <div className="mt-10 border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
-    &copy; {new Date().getFullYear()} Ayub Retail. All rights reserved.
+    &copy; {new Date().getFullYear()} TriCore It Solution. All rights reserved.
   </div>
 </footer>
     // <footer className="bg-gray-900 text-white mt-10">

@@ -37,7 +37,7 @@ const About = () => {
       {/* Image */}
       <div className="flex justify-center lg:justify-end">
         <img
-          src="/images/about.png"
+          src="/images/team.png"
           alt="Our Story"
           className="w-full max-w-md md:max-w-full rounded-xl shadow-lg object-cover"
         />
@@ -52,7 +52,7 @@ const About = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Card 1 */}
         <div className="bg-white rounded-2xl shadow hover:shadow-xl p-6 flex flex-col items-center text-center">
-          <img src="/images/quality.png" alt="Quality" className="h-20 mb-4" />
+          <img src="/images/qua.png" alt="Quality" className="rounded-lg mb-4 h-44 object-cover" />
           <h3 className="font-semibold text-lg text-slate-800 mb-2">Quality</h3>
           <p className="text-gray-500 text-sm">
             We deliver top-quality materials and services that our clients can trust.
@@ -61,7 +61,7 @@ const About = () => {
 
         {/* Card 2 */}
         <div className="bg-white rounded-2xl shadow hover:shadow-xl p-6 flex flex-col items-center text-center">
-          <img src="/images/integrity.png" alt="Integrity" className="h-20 mb-4" />
+          <img src="/images/integrity.png" alt="Integrity" className="rounded-lg mb-4 h-44 object-cover" />
           <h3 className="font-semibold text-lg text-slate-800 mb-2">Integrity</h3>
           <p className="text-gray-500 text-sm">
             Honesty and transparency are at the core of our operations.
@@ -70,7 +70,7 @@ const About = () => {
 
         {/* Card 3 */}
         <div className="bg-white rounded-2xl shadow hover:shadow-xl p-6 flex flex-col items-center text-center">
-          <img src="/images/customer.png" alt="Customer Focus" className="h-20 mb-4" />
+          <img src="/images/cus.png" alt="Customer Focus" className="rounded-lg mb-4 h-44 object-cover" />
           <h3 className="font-semibold text-lg text-slate-800 mb-2">Customer Focus</h3>
           <p className="text-gray-500 text-sm">
             Our clients’ success drives everything we do, from product selection to service delivery.

@@ -18,7 +18,7 @@ const Router = () => {
         <Route path="/ourservice" element={<ProductPage />} />
         <Route path="/contact_us" element={<ProductPage />} />
         <Route path="/about_us" element={<ProductPage />} />
-        <Route path="/ceramic/wall/china" element={<ProductPage />} />
+        <Route path="/company" element={<ProductPage />} />
         <Route path="/ceramic/wall/india" element={<ProductPage />} />
         <Route path="/ceramic/wall/dukem" element={<ProductPage />} />
         <Route path="/ceramic/wall/arerti" element={<ProductPage />} />
