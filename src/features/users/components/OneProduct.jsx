@@ -4,11 +4,28 @@ import { useParams } from "react-router-dom";
 import Button from "../../shared/components/Button";
 import AlertOrderNow from "./AlertOrderNow";
 
+
+
+
+// Sample data
+const mensCloths = [
+  { id: 1, image: "/images/h1.png", title: "Habesha Kemis", price: 1200 },
+  { id: 2, image: "/images/h2.png", title: "Traditional Gabi", price: 95 },
+  { id: 3, image: "/images/h3.png", title: "Cultural Outfit", price: 150 },
+  { id: 4, image: "/images/h4.png", title: "Handwoven Cloth", price: 110 },
+  { id: 5, image: "/images/h5.png", title: "Modern Habesha", price: 130 },
+  { id: 6, image: "/images/h6.png", title: "Wedding Wear", price: 180 },
+  { id: 7, image: "/images/h7.png", title: "Classic Kemis", price: 125 },
+  { id: 8, image: "/images/h8.png", title: "Elegant Gabi", price: 100 },
+  { id: 9, image: "/images/h9.png", title: "Cultural Style", price: 115 },
+  { id: 10, image: "/images/men10.png", title: "Premium Habesha", price: 200 },
+];
+
 export default function OneProduct() {
   const [open, setOpen] = useState(false);
-  const [qty, setQty] = useState(1);
+  
   const [tab, setTab] = useState("description");
-  const { id } = useParams();
+  
   const [data, setData] = useState();
   const fetchData = async () => {
     try {
@@ -21,151 +38,134 @@ export default function OneProduct() {
   useEffect(() => {
     fetchData()
   },[])
+
+const { id } = useParams();
+  const item = mensCloths.find((c) => c.id === parseInt(id));
+  const [quantity, setQuantity] = useState(1);
+
+  if (!item) return <div className="p-20 text-center text-red-500">Cloth not found</div>;
+
+  const total = item.price * quantity;
   return (
+    
     <div className="App mt-14 bg-white w-full min-h-screen">
       <div className=" flex flex-col lg:flex-row p-8 gap-10">
         {/* Left Image */}
 
         <div className="flex-1 flex justify-center">
           <img
-            src={`https://www.ayu.server.ayubceramic.com/${data?.img_url}`}
+            src={item?.image}
             alt="product"
             className="w-[400px] h-[500px] object-cover rounded-xl"
             style={{ border: "solid 1px black" }}
           />
         </div>
 
-        {/* Right Details */}
-        <div className="flex-1 space-y-4">
-          <h1 className="text-2xl font-bold text-gray-900">{(data?.name+"").toUpperCase()}</h1>
+       {/* Right Details */}
+<div className="flex-1 space-y-6">
 
-          <p className="text-blue-600 font-medium cursor-pointer hover:underline w-fit">
-            <span>{(data?.category + "").toUpperCase()} </span>
-            {!!data?.subCategory && (
-              <span className="ml-7">
-                {(data?.subCategory + "").toUpperCase()}
-              </span>
-            )}
-          </p>
-          <div style={{ border: "solid black 1px" }}></div>
-          <div className="columns-2">
-            <div className="text-3xl font-semibold text-blue-600">
-              {data?.price} Birr
-            </div>
-            {/* <div>
-              <div className="flex items-center gap-2 ">
-                <div className="bg-orange-200 px-2 rounded-2xl">
-                  <StarBorderOutlined fontSize="small" color="warning" />
-                  <span className="text-orange-500">4.0</span>
-                </div>
-                <div className="bg-gray-300 px-2 rounded-2xl">
-                  <SmsOutlined fontSize="small" />
-                  <span>(1 review)</span>
-                </div>
-              </div>
+  {/* Title */}
+  <h1 className="text-3xl font-extrabold text-slate-900 tracking-wide">
+    {(item?.title + "").toUpperCase()}
+  </h1>
 
-              <p className="text-green-600 font-semibold">
-                100%{" "}
-                <span className="text-black">of buyers recommended this</span>
-              </p>
-            </div> */}
-          </div>
-          <div style={{ border: "solid black 1px" }}></div>
-          {/* Quantity */}
-          <div className="flex items-center gap-4 pt-4">
-            <div className="flex items-center border rounded">
-              <button
-                onClick={() => qty > 1 && setQty(qty - 1)}
-                className="px-4 py-2 border-r"
-              >
-                -
-              </button>
-              <div className="px-6">{qty}</div>
-              <button
-                onClick={() => setQty(qty + 1)}
-                className="px-4 py-2 border-l"
-              >
-                +
-              </button>
-            </div>
-            <p className="text-xl">
-              Total Price:{" "}
-              <span className="text-blue-600 font-bold">
-                {qty * parseFloat(data?.price || 0)} Birr
-              </span>
-            </p>
-          </div>
+  {/* Price */}
+  <div className="flex items-center justify-between">
+    <span className="text-4xl font-bold text-amber-700">
+      {item?.price} Birr
+    </span>
 
-          {/* Buttons */}
-          <div className="flex gap-4 pt-4">
-            <Button variant="info" size="md" onClick={() => setOpen(true)}>
-              Order Now{" "}
-            </Button>
-          </div>
-        </div>
+    <span className="px-4 py-1 rounded-full text-sm font-semibold
+      bg-green-100 text-green-700">
+      In Stock
+    </span>
+  </div>
+
+  {/* Divider */}
+  <div className="border-t border-gray-200" />
+
+  {/* Quantity & Total */}
+  <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+
+    {/* Quantity Selector */}
+    <div className="flex items-center border rounded-lg overflow-hidden">
+      <button
+        onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+        className="px-5 py-2 text-lg font-bold text-gray-700 hover:bg-gray-100"
+      >
+        −
+      </button>
+
+      <div className="px-6 py-2 font-semibold text-slate-800">
+        {quantity}
       </div>
-      <div className="p-6 ">
-        {/* Tabs */}
-        <div className="flex gap-6 border-b ">
-          <button
-            onClick={() => setTab("description")}
-            className={`pb-2 font-medium text-lg ${
-              tab === "description"
-                ? "text-blue-600 border-b-2 border-blue-600"
-                : "text-gray-600"
-            }`}
-          >
-            Description
-          </button>
 
-          {/* <button
-            onClick={() => setTab("reviews")}
-            className={`pb-2 font-medium text-lg ${
-              tab === "reviews"
-                ? "text-blue-600 border-b-2 border-blue-600"
-                : "text-gray-600"
-            }`}
-          >
-            Reviews (1)
-          </button> */}
+      <button
+        onClick={() => setQuantity(quantity + 1)}
+        className="px-5 py-2 text-lg font-bold text-gray-700 hover:bg-gray-100"
+      >
+        +
+      </button>
+    </div>
+
+    {/* Total */}
+    <div className="text-xl text-slate-700">
+      Total:
+      <span className="ml-2 font-bold text-amber-700">
+        {total} Birr
+      </span>
+    </div>
+  </div>
+
+  {/* Action Button */}
+  <div className="pt-4">
+    <button
+          onClick={() => setOpen(true)}
+          className="bg-amber-700 text-white px-8 py-3 rounded-lg shadow-lg
+          hover:bg-amber-800 transition font-semibold tracking-wide"
+        >
+          Order Now
+        </button>
+    
+  </div>
+
+  {/* Description Box */}
+  <div className="mt-10 bg-[#F7EFE3] rounded-2xl p-6 space-y-4">
+
+    <h2 className="text-xl font-semibold text-slate-800">
+      Product Description
+    </h2>
+
+    <p className="text-gray-700 leading-relaxed">
+      {item?.description}
+    </p>
+
+    {/* Meta Info */}
+    <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
+
+      <div className="flex items-center gap-2">
+        <span className="font-semibold">Availability:</span>
+        <span className="text-green-700 font-semibold">
+          {item?.quantity} in stock
+        </span>
+      </div>
+
+      {item?.model && (
+        <div className="flex items-center gap-2">
+          <span className="font-semibold">Model:</span>
+          <span>{item?.model}</span>
         </div>
+      )}
 
-        {/* Description Tab */}
-        {tab === "description" && (
-          <div className="pt-6 space-y-4 text-gray-800 leading-relaxed">
-            <p>{data?.description}</p>
-
-            {/* Product Meta */}
-            <div className="pt-6 space-y-2 text-gray-700">
-              <p className="flex items-center gap-2">
-                {/* <AiOutlineCheckCircle className="text-blue-600" /> */}
-                <strong>Availability:</strong> {data?.quantity} In Stock
-              </p>
-
-              {!!data?.model && (
-                <p className="flex items-center gap-2">
-                  {/* <AiOutlineCheckCircle className="text-blue-600" /> */}
-                  <strong>Model:</strong> {data?.model}
-                </p>
-              )}
-
-              {!!data?.brand && (
-                <p className="flex items-center gap-2">
-                  {/* <AiOutlineCheckCircle className="text-blue-600" /> */}
-                  <strong>Brand:</strong>
-                  {data?.brand}
-                </p>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Reviews Tab */}
-        {tab === "reviews" && (
-          <div className="pt-6">
-            <p className="text-gray-700">⭐ 4.0 — Good quality product!</p>
-          </div>
-        )}
+      {item?.brand && (
+        <div className="flex items-center gap-2">
+          <span className="font-semibold">Brand:</span>
+          <span>{item?.brand}</span>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
       </div>
       <AlertOrderNow open={open} onClose={() => setOpen(false)} />
     </div>

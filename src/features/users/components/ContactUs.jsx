@@ -30,7 +30,7 @@ const ContactUs = () => {
    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
   {/* Card 1 – Address */}
-  <div className="bg-white rounded-2xl shadow p-6">
+  <div className="bg-white rounded-2xl shadow p-6 border-b-2 border-l-2  border-amber-700">
     <h3 className="font-semibold text-slate-800 mb-2">📍 Address</h3>
     <p className="text-gray-500 text-sm">
       TRICORE IT SOLUTION
@@ -39,7 +39,7 @@ const ContactUs = () => {
   </div>
 
   {/* Card 2 – Phone */}
-  <div className="bg-white rounded-2xl shadow p-6">
+  <div className="bg-white rounded-2xl shadow p-6 border-b-2 border-r-2  border-amber-700">
     <h3 className="font-semibold text-slate-800 mb-2">📞 Phone</h3>
     <p className="text-gray-500 text-sm">
       +251 999401010
@@ -52,7 +52,7 @@ const ContactUs = () => {
   </div>
 
   {/* Card 3 – Email */}
-  <div className="bg-white rounded-2xl shadow p-6">
+  <div className="bg-white rounded-2xl shadow p-6 border-b-2 border-l-2  border-amber-700">
     <h3 className="font-semibold text-slate-800 mb-2">✉️ Email</h3>
     <p className="text-gray-500 text-sm">
       tricoreitsolution99@gmail.com
@@ -60,7 +60,7 @@ const ContactUs = () => {
   </div>
 
   {/* Card 4 – Working Hours */}
-  <div className="bg-white rounded-2xl shadow p-6">
+  <div className="bg-white rounded-2xl shadow p-6 border-b-2 border-r-2  border-amber-700">
     <h3 className="font-semibold text-slate-800 mb-2">⏰ Working Hours</h3>
     <p className="text-gray-500 text-sm">
       Mon – Sat: 8:30 AM – 6:30 PM
@@ -88,7 +88,7 @@ const ContactUs = () => {
 
 
       {/* RIGHT – CONTACT FORM */}
-     <div className="bg-white rounded-2xl shadow p-8">
+     <div className="bg-white rounded-2xl shadow p-8 border-b-2  border-amber-700">
   <h2 className="text-xl font-semibold text-slate-800 mb-6">
     Send us a message
   </h2>

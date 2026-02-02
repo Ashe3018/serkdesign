@@ -4,22 +4,17 @@ const Footer = () => {
     <footer className="bg-slate-900 text-white py-10 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
-    {/* ABOUT / BRAND */}
-    <div>
-      <h2 className="text-xl font-bold mb-4">TriCore It Solution</h2>
-      <p className="text-gray-400 text-sm">
-         TriCore IT Solution is dedicated to delivering cutting-edge digital solutions, including digital menu systems, website development, and comprehensive system management. Our mission is to empower businesses with modern, reliable, and innovative tools that drive growth and efficiency. 
-      </p>
-    </div>
+  
 
     {/* QUICK LINKS */}
     <div>
       <h2 className="text-xl font-bold mb-4">Quick Links</h2>
       <ul className="space-y-2 text-gray-400 text-sm">
         <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
+        <li><a href="/men" className="hover:text-blue-500 transition">Men</a></li>
+        <li><a href="/women" className="hover:text-blue-500 transition">Women</a></li>
+        <li><a href="/kids" className="hover:text-blue-500 transition">Kids</a></li>
         <li><a href="/about_us" className="hover:text-blue-500 transition">About Us</a></li>
-        <li><a href="/ourservice" className="hover:text-blue-500 transition">Our Services</a></li>
-         <li><a href="/company" className="hover:text-blue-500 transition">Company</a></li>
         <li><a href="/contact_us" className="hover:text-blue-500 transition">Contact</a></li>
       </ul>
     </div>
@@ -30,7 +25,17 @@ const Footer = () => {
       <ul className="space-y-2 text-gray-400 text-sm">
         <li>📞 Phone: <a href="tel:+251900000000" className="hover:text-blue-500 transition">+251 999401010</a></li>
         <li>✉️ Email: <a href="mailto:info@ayubretail.com" className="hover:text-blue-500 transition">tricoreitsolution99@gmail.com</a></li>
-      </ul>
+       <li>
+      💬 Telegram:{" "}
+      <a
+        href="https://t.me/tricoreitsolution"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-blue-500 transition"
+      >
+        @tricoreitsolution
+      </a>
+    </li></ul>
     </div>
 
     {/* SOCIAL MEDIA */}
@@ -81,11 +86,30 @@ const Footer = () => {
        
       </div>
     </div>
+
+      {/* ABOUT / BRAND */}
+    <div>
+  <h2 className="text-xl font-bold mb-4">Developed by TriCore IT Solution</h2>
+  <p className="text-gray-400 text-sm mb-2">
+    Delivering cutting-edge digital solutions including websites, digital menus, and system management.
+  </p>
+  <p className="text-gray-400 text-sm">
+    <strong>Contact Us:</strong> <br />
+    Email: <a href="mailto:tricoreitsolution99@gmail.com" className="text-amber-700 hover:underline">tricoreitsolution99@gmail.com</a> <br />
+    Phone: <a href="tel:+251999401010" className="text-amber-700 hover:underline">+251 999 40 10 10</a> <br />
+    Website: <a href="https://www.tricore.com" target="_blank" className="text-amber-700 hover:underline">www.tricore.com</a>
+  </p>
+</div>
   </div>
 
   {/* COPYRIGHT */}
-  <div className="mt-10 border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
-    &copy; {new Date().getFullYear()} TriCore It Solution. All rights reserved.
+  <div className="mt-10 border-t border-amber-700 pt-6 text-center text-gray-400 text-sm">
+    &copy; {new Date().getFullYear()}  <span style={{ fontFamily: "Noto Serif Ethiopic", fontWeight: 700 }}>
+    ሠርክ
+  </span>{" "}
+  <span style={{ fontFamily: "Cinzel", fontWeight: 700 }}>
+    Design
+  </span> All rights reserved.
   </div>
 </footer>
     // <footer className="bg-gray-900 text-white mt-10">

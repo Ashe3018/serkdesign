@@ -8,22 +8,22 @@ const Header = () => {
   const handleToggle = (menuName) => {
     setOpen(open === menuName ? null : menuName);
   }; const navigat = useLocation();
+ 
   const navLinks = [
-    { label: "Home", to: "/" },
-    { label: "Our Services", to: "/ourservice" },
-    { label: "Company", to: "/company" },
-    { label: "Contact Us", to: "/contact_us" },
-    { label: "Abour Us", to: "/about_us" },
-    {
+  { label: "Home", to: "/" },
+  { label: "Men", to: "/mens" },
+  { label: "Women", to: "/women" },
+  { label: "Kids", to: "/kids" },
+  { label: "Contact", to: "/contact_us" },
+  { label: "About Us", to: "/about" },
+ 
+  
+   {
       label: navigat.pathname === "/manage-products" ? "Logout" : "Login",
       to: navigat.pathname === "/manage-products" ? "/" : "/login",
     },
-  ];
-  const options = [
-    { label: "Ceramic", to: "/" },
-    { label: "Mirror", to: "/" },
-    { label: "Cabinet", to: "/" },
-  ];
+];
+ 
  
   const data = (localStorage.getItem("data"));
   if (navigat.pathname === "/manage-products" && !data) {
@@ -33,27 +33,39 @@ const Header = () => {
     localStorage.clear();
   }
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-  <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+  <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 border-b-2 border-amber-700">
+  <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
     {/* Logo / Brand */}
-    <Link to="/" className="flex items-center gap-2">
-      {/* Uncomment if you want a logo image */}
-      <img src="/images/Tri.png" alt="logo" width={50} className="rounded-lg" />
-      <span className="text-2xl font-bold text-blue-600">TRICORE IT SOLUTION</span>
+    <Link to="/" className="flex items-center gap-3">
+      <img
+        src="/images/logo.jpg" // traditional logo
+        alt="Habesha Cultural Wear"
+        width={48}
+        className="w-14 h-12 rounded-full object-cover"
+      />
+    <span className="text-2xl tracking-wide text-amber-700">
+  <span style={{ fontFamily: "Noto Serif Ethiopic", fontWeight: 700 }}>
+    ሠርክ
+  </span>{" "}
+  <span style={{ fontFamily: "Cinzel", fontWeight: 700 }}>
+    Design
+  </span>
+</span>
     </Link>
 
     {/* Desktop Navigation */}
-    <nav className="hidden md:flex items-center space-x-4">
+    <nav className="hidden md:flex items-center space-x-3">
       {navLinks.map((link) =>
-        link.label === "Catagory" ? (
-          <div className="relative" key="category">
+        link.label === "Collections" ? (
+          <div className="relative" key="collections">
             <button
               onClick={() => handleToggle("shop")}
-              className={`flex items-center gap-1 px-4 py-2 rounded hover:bg-blue-600 transition text-gray-800 ${
-                open === "shop" ? "bg-blue-600 font-semibold" : ""
+              className={`flex items-center gap-1 px-4 py-2 rounded-md transition
+              text-gray-800 hover:text-amber-700 ${
+                open === "shop" ? "text-amber-700 font-semibold" : ""
               }`}
             >
-              Catagory
+              Collections
               <svg
                 className={`w-4 h-4 transition-transform ${
                   open === "shop" ? "rotate-180" : ""
@@ -71,28 +83,17 @@ const Header = () => {
               </svg>
             </button>
 
-            {open === "shop" && (
-              <div className="absolute left-0 mt-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
-                {options.map((option) => (
-                  <Link
-                    key={option.to}
-                    to={option.to}
-                    className="block px-4 py-2 text-blue-600 hover:text-blue-600 transition"
-                  >
-                    {option.label}
-                  </Link>
-                ))}
-              </div>
-            )}
+           
           </div>
         ) : (
           <Link
             key={link.to}
             to={link.to}
-            className={`px-4 py-2 rounded transition font-medium ${
-              navigat.pathname === link.to || navigat.pathname === link?.otherLink
-                ? "bg-indigo-600 text-white"
-                : "text-gray-800 hover:text-blue-600 hover:text-indigo-700"
+            className={`px-4 py-2 rounded-md font-medium transition ${
+              navigat.pathname === link.to ||
+              navigat.pathname === link?.otherLink
+                ? "text-amber-700 border-b-2 border-amber-700"
+                : "text-gray-800 hover:text-amber-700"
             }`}
           >
             {link.label}
@@ -105,34 +106,62 @@ const Header = () => {
     <div className="md:hidden">
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="p-2 rounded hover:text-blue-600 transition"
+        className="p-2 rounded hover:text-amber-700 transition"
       >
-        {menuOpen ? <BackspaceOutlined fontWeight="small" /> : <MenuOutlined fontWeight="small" />}
+        {menuOpen ? <BackspaceOutlined /> : <MenuOutlined />}
       </button>
     </div>
   </div>
 
-  {/* Mobile Menu */}
-  {menuOpen && (
-    <div className="md:hidden bg-white border-t shadow">
-      <nav className="flex flex-col space-y-2 py-4 text-center">
-        {navLinks.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            onClick={() => setMenuOpen(false)}
-            className={`px-4 py-2 rounded transition font-medium ${
-              navigat.pathname === link.to || navigat.pathname === link?.otherLink
-                ? "bg-indigo-600 text-white"
-                : "text-gray-800 hover:text-blue-600 hover:text-indigo-700"
-            }`}
-          >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+ {/* Mobile Menu Overlay */}
+{menuOpen && (
+  <div
+    className="fixed inset-0 bg-black/40 z-40 md:hidden"
+    onClick={() => setMenuOpen(false)}
+  />
+)}
+
+{/* Mobile Left Drawer */}
+<div
+  className={`fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-lg
+  transform transition-transform duration-300 md:hidden
+  ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
+>
+  {/* Drawer Header */}
+  <div className="flex items-center justify-between px-4 py-4 border-b">
+    <span className="text-lg font-bold text-amber-700">
+      Habesha Cultural Wear
+    </span>
+    <button onClick={() => setMenuOpen(false)}>
+      <BackspaceOutlined />
+    </button>
+  </div>
+
+  {/* Drawer Links */}
+  <nav className="flex flex-col space-y-2 px-4 py-4">
+    {navLinks.map((link) => (
+      <Link
+        key={link.to}
+        to={link.to}
+        onClick={() => setMenuOpen(false)}
+        className={`px-3 py-2 rounded-md font-medium transition ${
+          navigat.pathname === link.to ||
+          navigat.pathname === link?.otherLink
+            ? "bg-amber-100 text-amber-700"
+            : "text-gray-800 hover:bg-amber-50 hover:text-amber-700"
+        }`}
+      >
+        {link.label}
+      </Link>
+    ))}
+     {/* Footer / Developer Info */}
+   <div className="px-4 py-6 border-t border-gray-200 text-gray-500 text-sm space-y-1">
+      <p>Developed by <span className="font-semibold text-amber-700">TriCore IT Solution</span></p>
+      <p>Email: <a href="mailto:tricoreitsolution99@gmail.com" className="text-amber-700 hover:underline">tricoreitsolution99@gmail.com</a></p>
+      <p>Phone: <a href="tel:+251999401010" className="text-amber-700 hover:underline">+251 999 40 10 10</a></p>
     </div>
-  )}
+  </nav>
+</div>
 </header>
     // <header className="bg-slate-300 shadow-md fixed top-0 left-0 w-full z-50 ">
     //   <div className="max-w-7xl mx-auto px-6 py-1 flex justify-between items-center">

@@ -3,35 +3,30 @@ import ProductGrid from "../components/ProductGrid";
 import { useLocation,useNavigate } from "react-router-dom";
 import useCRUD from "../hooks/useCRUD";
 
-const OurService = () => {
+const KidsCloth = () => {
   const nav = useLocation();
    const navigate = useNavigate();
   const { datas } = useCRUD(
     "https://www.ayu.server.ayubceramic.com/product",nav.pathname
   );
   const mensCloths = [
-  { id: 1, image: "/images/we1.jpg", title: "Habesha Kemis" },
-  { id: 2, image: "/images/we2.jpg", title: "Traditional Gabi" },
-  { id: 3, image: "/images/we3.jpg", title: "Cultural Outfit" },
-  { id: 4, image: "/images/we4.png", title: "Handwoven Cloth" },
-  { id: 5, image: "/images/we5.png", title: "Modern Habesha" },
-  { id: 6, image: "/images/we6.png", title: "Wedding Wear" },
-  { id: 7, image: "/images/we7.png", title: "Classic Kemis" },
-  { id: 8, image: "/images/we8.png", title: "Elegant Gabi" },
-  { id: 9, image: "/images/we9.png", title: "Cultural Style" },
-  { id: 10, image: "/images/ss.png", title: "Premium Habesha" },
+  { id: 1, image: "/images/ki.png", title: "Habesha Kemis" },
+  { id: 2, image: "/images/ki1.png", title: "Traditional Gabi" },
+  { id: 3, image: "/images/ki3.png", title: "Cultural Outfit" },
+  { id: 4, image: "/images/ki4.png", title: "Handwoven Cloth" },
+  
 ];
  const [showAll, setShowAll] = useState(false);
 
   const displayedItems = showAll ? mensCloths : mensCloths.slice(0, 8);
   
   return (
-    <div className="relative py-12 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden">
+    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden">
       
       {/* Section Header */}
       <div className=" text-center mb-14">
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">
-          Men’s Cultural Cloths
+          Kid’s Cultural Cloths
         </h2>
         <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
           Authentic Habesha traditional wear crafted with heritage and elegance.
@@ -39,7 +34,7 @@ const OurService = () => {
       </div>
 
       {/* Grid */}
-   <div className=" max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+     <div className=" max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
   {displayedItems.map((item) => (
   <div
   key={item.id}
@@ -80,6 +75,7 @@ const OurService = () => {
   ))}
 </div>
 
+
       {/* View More / View Less Button */}
       {mensCloths.length > 9 && (
         <div className="mt-12 text-center">
@@ -107,4 +103,4 @@ const OurService = () => {
   );
 };
 
-export default OurService;
+export default KidsCloth;

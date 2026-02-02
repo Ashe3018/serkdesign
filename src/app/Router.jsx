@@ -15,11 +15,14 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<ProductPage />} />
-        <Route path="/ourservice" element={<ProductPage />} />
+        <Route path="/mens" element={<ProductPage />} />
         <Route path="/contact_us" element={<ProductPage />} />
-        <Route path="/about_us" element={<ProductPage />} />
-        <Route path="/company" element={<ProductPage />} />
-        <Route path="/ceramic/wall/india" element={<ProductPage />} />
+        <Route path="/about" element={<ProductPage />} />
+        <Route path="/women" element={<ProductPage />} />
+        <Route path="/kids" element={<ProductPage />} />
+        <Route path="/product/:id" element={<OneProduct />} />
+
+        
         <Route path="/ceramic/wall/dukem" element={<ProductPage />} />
         <Route path="/ceramic/wall/arerti" element={<ProductPage />} />
         <Route path="/ceramic/floor" element={<ProductPage />} />
@@ -51,7 +54,7 @@ const Router = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/leser" element={<ProductPage />} />
         <Route path="/paints" element={<ProductPage />} />
-        <Route path="/product/:id" element={<OneProduct />} />
+        
         <Route path="/brand" element={<BrandPage />} />
       </Routes>
       <Footer/>
