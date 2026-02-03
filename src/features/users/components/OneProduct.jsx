@@ -9,16 +9,32 @@ import AlertOrderNow from "./AlertOrderNow";
 
 // Sample data
 const mensCloths = [
-  { id: 1, image: "/images/h1.png", title: "Habesha Kemis", price: 1200 },
-  { id: 2, image: "/images/h2.png", title: "Traditional Gabi", price: 95 },
-  { id: 3, image: "/images/h3.png", title: "Cultural Outfit", price: 150 },
-  { id: 4, image: "/images/h4.png", title: "Handwoven Cloth", price: 110 },
-  { id: 5, image: "/images/h5.png", title: "Modern Habesha", price: 130 },
-  { id: 6, image: "/images/h6.png", title: "Wedding Wear", price: 180 },
-  { id: 7, image: "/images/h7.png", title: "Classic Kemis", price: 125 },
-  { id: 8, image: "/images/h8.png", title: "Elegant Gabi", price: 100 },
-  { id: 9, image: "/images/h9.png", title: "Cultural Style", price: 115 },
-  { id: 10, image: "/images/men10.png", title: "Premium Habesha", price: 200 },
+  { id: 1, image: "/images/we1.png", title: "Habesha Kemis", price: 1200 },
+  { id: 2, image: "/images/we2.png", title: "Traditional Gabi", price: 95 },
+  { id: 3, image: "/images/we3.png", title: "Cultural Outfit", price: 150 },
+  { id: 4, image: "/images/we4.png", title: "Handwoven Cloth", price: 110 },
+  { id: 5, image: "/images/we5.png", title: "Modern Habesha", price: 130 },
+  { id: 6, image: "/images/we6.png", title: "Wedding Wear", price: 180 },
+  { id: 7, image: "/images/we7.png", title: "Classic Kemis", price: 125 },
+  { id: 8, image: "/images/we8.png", title: "Elegant Gabi", price: 100 },
+  { id: 9, image: "/images/we9.png", title: "Cultural Style", price: 115 },
+  { id: 10, image: "/images/we.png", title: "Premium Habesha", price: 200 },
+
+   { id: 11, image: "/images/se.png", title: "Habesha Kemis", price: 1200 },
+  { id: 12, image: "/images/se1.png", title: "Traditional Gabi", price: 95 },
+  { id: 13, image: "/images/se2.png", title: "Cultural Outfit", price: 150 },
+  { id: 14, image: "/images/se3.png", title: "Handwoven Cloth", price: 110 },
+  { id: 15, image: "/images/se4.png", title: "Modern Habesha", price: 130 },
+  { id: 16, image: "/images/se5.png", title: "Wedding Wear", price: 180 },
+  { id: 17, image: "/images/se6.png", title: "Classic Kemis", price: 125 },
+  { id: 18, image: "/images/se7.png", title: "Elegant Gabi", price: 100 },
+  { id: 19, image: "/images/se8.png", title: "Cultural Style", price: 115 },
+  { id: 20, image: "/images/se9png", title: "Premium Habesha", price: 200 },
+
+  { id: 21, image: "/images/ki.png", title: "Classic Kemis", price: 125 },
+  { id: 22, image: "/images/ki1.png", title: "Elegant Gabi", price: 100 },
+  { id: 23, image: "/images/ki2.png", title: "Cultural Style", price: 115 },
+  { id: 24, image: "/images/ki3.png", title: "Premium Habesha", price: 200 },
 ];
 
 export default function OneProduct() {

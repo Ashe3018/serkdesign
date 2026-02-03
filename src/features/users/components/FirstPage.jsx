@@ -3,10 +3,10 @@ import {React,useEffect,useState} from "react";
 import { useLocation,useNavigate } from "react-router-dom";
 import useCRUD from "../hooks/useCRUD";
  const images = [
-    "/images/se10.jpg",
-    "/images/se.jpg",
-    "/images/we2.jpg",
-    "/images/we1.jpg",
+    "/images/se10.png",
+    "/images/se.png",
+    "/images/we2.png",
+    "/images/we1.png",
   ];
 const FirstPage = () => {
   const nav = useLocation();

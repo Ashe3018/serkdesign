@@ -10,16 +10,16 @@ const OurService = () => {
     "https://www.ayu.server.ayubceramic.com/product",nav.pathname
   );
   const mensCloths = [
-  { id: 1, image: "/images/we1.jpg", title: "Habesha Kemis" },
-  { id: 2, image: "/images/we2.jpg", title: "Traditional Gabi" },
-  { id: 3, image: "/images/we3.jpg", title: "Cultural Outfit" },
+  { id: 1, image: "/images/we1.png", title: "Habesha Kemis" },
+  { id: 2, image: "/images/we2.png", title: "Traditional Gabi" },
+  { id: 3, image: "/images/we3.png", title: "Cultural Outfit" },
   { id: 4, image: "/images/we4.png", title: "Handwoven Cloth" },
   { id: 5, image: "/images/we5.png", title: "Modern Habesha" },
   { id: 6, image: "/images/we6.png", title: "Wedding Wear" },
   { id: 7, image: "/images/we7.png", title: "Classic Kemis" },
   { id: 8, image: "/images/we8.png", title: "Elegant Gabi" },
   { id: 9, image: "/images/we9.png", title: "Cultural Style" },
-  { id: 10, image: "/images/ss.png", title: "Premium Habesha" },
+  { id: 10, image: "/images/we.png", title: "Premium Habesha" },
 ];
  const [showAll, setShowAll] = useState(false);
 

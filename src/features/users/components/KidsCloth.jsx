@@ -10,10 +10,10 @@ const KidsCloth = () => {
     "https://www.ayu.server.ayubceramic.com/product",nav.pathname
   );
   const mensCloths = [
-  { id: 1, image: "/images/ki.png", title: "Habesha Kemis" },
-  { id: 2, image: "/images/ki1.png", title: "Traditional Gabi" },
-  { id: 3, image: "/images/ki3.png", title: "Cultural Outfit" },
-  { id: 4, image: "/images/ki4.png", title: "Handwoven Cloth" },
+  { id: 21, image: "/images/ki.png", title: "Habesha Kemis" },
+  { id: 22, image: "/images/ki1.png", title: "Traditional Gabi" },
+  { id: 23, image: "/images/ki3.png", title: "Cultural Outfit" },
+  { id: 24, image: "/images/ki4.png", title: "Handwoven Cloth" },
   
 ];
  const [showAll, setShowAll] = useState(false);

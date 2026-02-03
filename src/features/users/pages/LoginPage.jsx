@@ -39,7 +39,7 @@ const LoginPage = () => {
         />
         <div className="flex flex-col items-center mb-6">
           <img
-            src="/images/p1.jpg" // replace with your logo
+            src="/images/logo.jpg" // replace with your logo
             alt="Logo"
             className="h-16 mb-2"
           />

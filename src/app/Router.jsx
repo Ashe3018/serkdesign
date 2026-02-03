@@ -21,9 +21,9 @@ const Router = () => {
         <Route path="/women" element={<ProductPage />} />
         <Route path="/kids" element={<ProductPage />} />
         <Route path="/product/:id" element={<OneProduct />} />
+        <Route path="/manage-products" element={<AdminProductsPage />} />
 
-        
-        <Route path="/ceramic/wall/dukem" element={<ProductPage />} />
+   
         <Route path="/ceramic/wall/arerti" element={<ProductPage />} />
         <Route path="/ceramic/floor" element={<ProductPage />} />
         <Route path="/ceramic/floor/china" element={<ProductPage />} />
@@ -50,7 +50,7 @@ const Router = () => {
         <Route path="/adhesive_filler/adhesive" element={<ProductPage />} />
         <Route path="/adhesive_filler/filler" element={<ProductPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/manage-products" element={<AdminProductsPage />} />
+       
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/leser" element={<ProductPage />} />
         <Route path="/paints" element={<ProductPage />} />
